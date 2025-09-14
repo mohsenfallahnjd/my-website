@@ -35,9 +35,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     site: "https://themohsen.me/",
   },
-  icons: {
-    icon: "/logo.svg",
-  },
+  icons: { icon: "/logo.svg" },
 };
 
 export default function RootLayout({ children }: { children: ReactNode }) {

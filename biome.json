@@ -25,6 +25,7 @@
       "!**/build/**/*",
       "!**/dist/**/*",
       "!**/public/**/*",
+      "**/public/content/**/*",
       "!**/out/**/*",
       "!**/.next/**/*",
       "!**/node_modules/**/*",

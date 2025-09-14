@@ -7,7 +7,7 @@ import Logo from "@/components/Logo";
 export default function Header() {
   return (
     <header>
-      <nav className="container">
+      <Stack component="nav" direction="row" justifyContent="space-between" alignItems="center" className="container">
         <Stack direction="row" spacing={2} alignItems="center">
           <Logo size={40} />
           {/* <Typography className="brand">
@@ -21,7 +21,7 @@ export default function Header() {
           </Link>
           <Link href="#contact">Say hi</Link>
         </Stack>
-      </nav>
+      </Stack>
     </header>
   );
 }

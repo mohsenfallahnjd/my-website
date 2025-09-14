@@ -1,6 +1,6 @@
 "use client";
 
-import { Stack, type StackProps, Typography } from "@mui/material";
+import { Box, Stack, type StackProps, Typography } from "@mui/material";
 import type { ReactNode } from "react";
 import { fontSecondary } from "@/theme/theme";
 
@@ -15,7 +15,9 @@ export default function Section({
   children: ReactNode;
 }) {
   return (
-    <Stack id={id} className="container" gap={2} flex={1} {...props}>
+    <Stack className="container" gap={2} flex={1} {...props}>
+      <Box id={id} sx={{ scrollMarginTop: 100 }} />
+
       <Stack spacing={1}>
         <Typography
           variant="h5"
