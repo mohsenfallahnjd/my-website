@@ -26,11 +26,11 @@ export default function Home() {
             See my work
           </Button>
           <Button
-            href="/Mohammad-Mohsen-Fallahnejad-Resume-Sep2025"
+            href="/Mohammad-Mohsen-Fallahnejad-Resume-Sep2025.pdf"
             variant="outlined"
             target="_blank"
             rel="noreferrer"
-            download="/Mohammad-Mohsen-Fallahnejad-Resume-Sep2025"
+            download="/Mohammad-Mohsen-Fallahnejad-Resume-Sep2025.pdf"
           >
             Resume
           </Button>
