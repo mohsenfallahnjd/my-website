@@ -90,13 +90,13 @@ export default function Home() {
       <Section id="contact" title="Say hi">
         <p className="muted">
           Reach me on LinkedIn{" "}
-          <Link href="https://www.linkedin.com/in/mohsenfallahnejad/" target="_blank" rel="noreferrer">
+          <Link href="https://www.linkedin.com/in/mohsenfallahnjd/" target="_blank" rel="noreferrer">
             @mohsenfallahnjd
           </Link>{" "}
           <br />
           or email me at{" "}
-          <Link href="mailto:mohsenfallahnejad@gmail.com" target="_blank" rel="noreferrer">
-            mohsenfallahnejad@gmail.com
+          <Link href="mailto:mohsenfallahnjd@gmail.com" target="_blank" rel="noreferrer">
+            mohsenfallahnjd@gmail.com
           </Link>
         </p>
       </Section>
