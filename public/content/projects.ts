@@ -1,6 +1,16 @@
 export const projects = [
   {
     active: true,
+    name: "Alias Router Pro (Chrome Extension)",
+    repo: "https://github.com/mohsenfallahnjd/alias-router-pro",
+    description:
+      "A Chrome extension that allows you to create aliases for your URLs. This is useful for developers who want to quickly publish short, focused content.",
+    // demo: "https://chromewebstore.google.com/detail/alias-router-pro/jgjgjgjgjgjgjgjgjgjgjgjgjgjgjgjg",
+    technologies: ["JavaScript", "HTML", "Chrome Extension"],
+    pwa: false,
+  },
+  {
+    active: true,
     name: "Sniply Blog",
     repo: "https://github.com/mohsenfallahnjd/sniply",
     description:
