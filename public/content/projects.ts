@@ -6,16 +6,16 @@ export const projects = [
     description:
       "A Chrome extension that allows you to create aliases for your URLs. like go + abc-123 => https://example.com/abc-123",
     // demo: "https://chromewebstore.google.com/detail/alias-router-pro/jgjgjgjgjgjgjgjgjgjgjgjgjgjgjgjg",
-    technologies: ["JavaScript", "HTML", "Chrome Extension"],
+    technologies: ["JavaScript", "HTML", "Chrome Extension", "Omnibox"],
     pwa: false,
   },
   {
     active: true,
-    name: "Sniply Blog",
-    repo: "https://github.com/mohsenfallahnjd/sniply",
+    name: "Bitlyst",
+    repo: "https://github.com/mohsenfallahnjd/bitlyst",
     description:
       "A minimal, fast, and beautiful blog built with Next.js 15, designed for sharing bite-sized tech tips and insights. Perfect for developers who want to quickly publish short, focused content.",
-    demo: "https://sniply-blog.vercel.app/",
+    demo: "https://bitlyst.vercel.app/",
     technologies: ["Next.js", "React", "TypeScript", "Tailwind", "Vercel"],
     pwa: false,
   },
