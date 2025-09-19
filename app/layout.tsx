@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import { ThemeProvider } from "@/theme";
 import "./globals.css";
+import { Analytics } from "@vercel/analytics/next";
 import type { ReactNode } from "react";
 import { font } from "@/theme/theme";
 
@@ -43,6 +44,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
     <html lang="en">
       <body className={font.className}>
         <ThemeProvider>{children}</ThemeProvider>
+        <Analytics />
       </body>
     </html>
   );
