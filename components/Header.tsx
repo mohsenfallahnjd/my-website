@@ -16,7 +16,7 @@ export default function Header() {
         </Stack>
         <Stack className="actions" direction="row" spacing={2}>
           <Link href="#projects">Projects</Link>
-          <Link href="https://sniply-blog.vercel.app/" target="_blank" rel="noreferrer">
+          <Link href="https://bitlyst.vercel.app/" target="_blank" rel="noreferrer">
             Blog
           </Link>
           <Link href="#contact">Say hi</Link>
