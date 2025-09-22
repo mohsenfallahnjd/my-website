@@ -5,7 +5,7 @@ export const projects = [
     repo: "https://github.com/mohsenfallahnjd/alias-router-pro",
     description:
       "A Chrome extension that allows you to create aliases for your URLs. like go + abc-123 => https://example.com/abc-123",
-    // demo: "https://chromewebstore.google.com/detail/alias-router-pro/jgjgjgjgjgjgjgjgjgjgjgjgjgjgjgjg",
+    demo: "https://chromewebstore.google.com/detail/alias-router-pro-omnibox/jlcfcckgpagmgggcjnlljejkbplcfjbh",
     technologies: ["JavaScript", "HTML", "Chrome Extension", "Omnibox"],
     pwa: false,
   },
