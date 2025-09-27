@@ -35,7 +35,7 @@ export const projects = [
     repo: "https://github.com/mohsenfallahnjd/react-query-mock-data",
     description:
       "A powerful and flexible package for generating mock data in React applications using React Query. This package provides hooks that make it easy to generate realistic mock data for testing and development purposes.",
-    demo: "www.npmjs.com/package/react-query-mock-data",
+    demo: "https://www.npmjs.com/package/react-query-mock-data",
     technologies: ["TypeScript", "React Query"],
     pwa: false,
   },
