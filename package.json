@@ -18,16 +18,16 @@
     "@mui/material": "^7.3.6",
     "@mui/material-nextjs": "^7.3.6",
     "@vercel/analytics": "^1.6.1",
-    "framer-motion": "^12.23.25",
-    "next": "^16.0.8",
-    "react": "^19.2.1",
-    "react-dom": "^19.2.1"
+    "framer-motion": "^12.23.26",
+    "next": "^16.0.10",
+    "react": "^19.2.3",
+    "react-dom": "^19.2.3"
   },
   "devDependencies": {
     "@biomejs/biome": "^2.3.8",
-    "@types/node": "24.10.2",
+    "@types/node": "25.0.1",
     "eslint": "9.39.1",
-    "eslint-config-next": "16.0.8",
+    "eslint-config-next": "16.0.10",
     "typescript": "5.9.3"
   }
 }
