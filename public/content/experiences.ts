@@ -1,9 +1,15 @@
 export const experiences = [
   {
+    company: "AlphaTech",
+    description: "Front-end Team Lead",
+    startDate: "October, 2024",
+    endDate: "Present",
+  },
+  {
     company: "Pouya Housh",
     description: "Senior Front-end Developer",
     startDate: "November, 2022",
-    endDate: "Present",
+    endDate: "October, 2024",
   },
   {
     company: "Speax.ai",

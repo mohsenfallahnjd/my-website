@@ -12,7 +12,7 @@ import { projects } from "@/public/content/projects";
 import { skills } from "@/public/content/skills";
 
 export default function Home() {
-  const heroVariants: Variants = {
+  const _heroVariants: Variants = {
     hidden: { opacity: 0, y: 50 },
     visible: {
       opacity: 1,
@@ -99,58 +99,52 @@ export default function Home() {
     <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.5 }}>
       <Stack component="main" gap={25}>
         <Header />
-        <motion.div variants={heroVariants} initial="hidden" animate="visible">
-          <Stack
-            className="container hero"
-            style={{ paddingTop: 40, paddingBottom: 24 }}
-            direction="column"
-            spacing={2}
-          >
-            <motion.h1 variants={heroItemVariants}>
-              Hello, I'm{" "}
-              <motion.span
-                style={{ color: "#0000FF" }}
-                whileHover={{ scale: 1.1, rotate: 2 }}
-                transition={{ duration: 0.2 }}
-              >
-                Mohsen
-              </motion.span>
-              <motion.span
-                animate={{ rotate: [0, 10, -10, 0] }}
-                transition={{ duration: 2, repeat: Infinity, repeatDelay: 3 }}
-              >
-                {" "}
-                👋
-              </motion.span>
-            </motion.h1>
-            <motion.p variants={heroItemVariants}>
-              I'm a{" "}
-              <motion.span style={{ color: "#0000FF" }} whileHover={{ scale: 1.05 }} transition={{ duration: 0.2 }}>
-                Front-End
-              </motion.span>{" "}
-              Developer focused on React & Next.js. I like clean, fast, minimal UIs. Outside of code: games 🎮 , soccer
-              ⚽, learning and building useful tools.
-            </motion.p>
-            <motion.div style={{ display: "flex", gap: 12, marginTop: 16 }} variants={heroItemVariants}>
-              <motion.div variants={buttonVariants} whileHover="hover" whileTap="tap">
-                <Button href="#projects" variant="contained" color="secondary">
-                  See my work
-                </Button>
-              </motion.div>
-              <motion.div variants={buttonVariants} whileHover="hover" whileTap="tap">
-                <Button
-                  href="/Mohammad-Mohsen-Fallahnejad-Resume-Sep2025.pdf"
-                  variant="outlined"
-                  target="_blank"
-                  rel="noreferrer"
-                  download="/Mohammad-Mohsen-Fallahnejad-Resume-Sep2025.pdf"
-                >
-                  Resume
-                </Button>
-              </motion.div>
+
+        <Stack className="container hero" style={{ paddingTop: 40, paddingBottom: 24 }} direction="column" spacing={2}>
+          <motion.h1 variants={heroItemVariants}>
+            Hello, I'm{" "}
+            <motion.span
+              style={{ color: "#0000FF" }}
+              whileHover={{ scale: 1.1, rotate: 2 }}
+              transition={{ duration: 0.2 }}
+            >
+              Mohsen
+            </motion.span>
+            <motion.span
+              animate={{ rotate: [0, 10, -10, 0] }}
+              transition={{ duration: 2, repeat: Infinity, repeatDelay: 3 }}
+            >
+              {" "}
+              👋
+            </motion.span>
+          </motion.h1>
+          <motion.p variants={heroItemVariants}>
+            I'm a{" "}
+            <motion.span style={{ color: "#0000FF" }} whileHover={{ scale: 1.05 }} transition={{ duration: 0.2 }}>
+              Front-End
+            </motion.span>{" "}
+            Developer focused on React & Next.js. I like clean, fast, minimal UIs. Outside of code: games 🎮 , soccer
+            ⚽, learning and building useful tools.
+          </motion.p>
+          <motion.div style={{ display: "flex", gap: 12, marginTop: 16 }} variants={heroItemVariants}>
+            <motion.div variants={buttonVariants} whileHover="hover" whileTap="tap">
+              <Button href="#projects" variant="contained" color="secondary">
+                See my work
+              </Button>
             </motion.div>
-          </Stack>
-        </motion.div>
+            <motion.div variants={buttonVariants} whileHover="hover" whileTap="tap">
+              <Button
+                href="/Mohammad-Mohsen-Fallahnejad-Resume-Sep2025.pdf"
+                variant="outlined"
+                target="_blank"
+                rel="noreferrer"
+                download="/Mohammad-Mohsen-Fallahnejad-Resume-Sep2025.pdf"
+              >
+                Resume
+              </Button>
+            </motion.div>
+          </motion.div>
+        </Stack>
 
         <Section title="I've worked with">
           <motion.div
