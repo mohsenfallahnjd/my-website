@@ -11,14 +11,12 @@ export default function ProjectCard({
   href,
   demo,
   technologies,
-  pwa,
 }: {
   title: string;
   description: string;
   href?: string;
   demo?: string;
   technologies?: string[];
-  pwa?: boolean;
 }) {
   return (
     <Stack direction="column" spacing={1}>

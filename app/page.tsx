@@ -210,7 +210,6 @@ export default function Home() {
                   href={p.repo}
                   demo={p.demo}
                   technologies={p.technologies}
-                  pwa={p.pwa}
                 />
               </motion.div>
             ))}
