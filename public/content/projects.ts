@@ -1,6 +1,30 @@
 export const projects = [
   {
     active: true,
+    name: "Birthday Reminder",
+    repo: "https://github.com/mohsenfallahnjd/birthday-reminder",
+    description: "Never forget a birthday again. A simple app to track and get reminded of your friends and family birthdays.",
+    demo: "https://wishdayapp.vercel.app/",
+    technologies: ["Next.js", "React", "TypeScript", "Tailwind"],
+  },
+  {
+    active: true,
+    name: "PDF Briefer",
+    repo: "https://github.com/mohsenfallahnjd/pdf-briefer",
+    description: "Upload a PDF and get an AI-powered summary. Quickly extract key insights from documents without reading them in full.",
+    demo: "https://pdf-briefer.vercel.app/",
+    technologies: ["Next.js", "React", "TypeScript", "AI"],
+  },
+  {
+    active: true,
+    name: "Fun Mun",
+    repo: "https://github.com/mohsenfallahnjd/fun-mun",
+    description: "A fun and interactive application built for entertainment and engagement.",
+    demo: "https://fun-mun.vercel.app/",
+    technologies: ["JavaScript", "React"],
+  },
+  {
+    active: true,
     name: "Kodous",
     repo: "https://github.com/mohsenfallahnjd/kodous",
     description: "A minimal service to send appreciation (kudos) to your team. Simple, kind, and personal.",
