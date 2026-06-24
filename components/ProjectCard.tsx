@@ -1,10 +1,11 @@
 "use client";
 
-import { Divider, Stack, Typography } from "@mui/material";
 import { motion } from "framer-motion";
+import { ArrowUpRight, Code2 } from "lucide-react";
 import Link from "next/link";
-import { Fragment } from "react";
-import { fontSecondary } from "@/theme/theme";
+import { useState } from "react";
+
+type Size = "large" | "small" | "wide";
 
 export default function ProjectCard({
   index,
@@ -13,6 +14,7 @@ export default function ProjectCard({
   href,
   demo,
   technologies,
+  size = "small",
 }: {
   index: number;
   title: string;
@@ -20,147 +22,169 @@ export default function ProjectCard({
   href?: string;
   demo?: string;
   technologies?: string[];
+  size?: Size;
 }) {
+  const [hovered, setHovered] = useState(false);
   const num = String(index + 1).padStart(2, "0");
+  const isLarge = size === "large";
+  const isWide = size === "wide";
 
   return (
-    <div style={{ position: "relative" }}>
-      <motion.span
-        aria-hidden
-        initial={{ opacity: 0, x: -10 }}
-        whileInView={{ opacity: 1, x: 0 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.5 }}
-        style={{
-          position: "absolute",
-          top: -22,
-          left: -6,
-          fontSize: "4.5rem",
-          fontWeight: 900,
-          lineHeight: 1,
-          color: "rgba(0, 0, 255, 0.06)",
-          userSelect: "none",
-          pointerEvents: "none",
-          fontFamily: fontSecondary.style.fontFamily,
-        }}
-      >
+    <motion.div
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, margin: "-30px" }}
+      transition={{ duration: 0.3, delay: index * 0.04, ease: "easeOut" }}
+      onMouseEnter={() => setHovered(true)}
+      onMouseLeave={() => setHovered(false)}
+      className={isLarge ? "bento-large" : isWide ? "bento-wide" : "bento-small"}
+      style={{
+        position: "relative",
+        borderRadius: 20,
+        padding: isLarge ? "36px 32px" : isWide ? "28px 32px" : "24px 22px",
+        background: hovered ? "#0000ff" : "#f4f4f6",
+        transition: "background 0.3s",
+        display: "flex",
+        flexDirection: "column",
+        justifyContent: isWide ? "space-between" : "space-between",
+        alignItems: isWide ? "center" : "flex-start",
+        gap: isWide ? 24 : 16,
+        overflow: "hidden",
+        cursor: "pointer",
+        minHeight: isLarge ? 260 : isWide ? "auto" : 200,
+      }}
+    >
+      {/* bg number watermark */}
+      <span style={{
+        position: "absolute",
+        bottom: isWide ? "50%" : 12,
+        right: 16,
+        transform: isWide ? "translateY(50%)" : "none",
+        fontSize: isLarge ? "7rem" : "4rem",
+        fontWeight: 900,
+        lineHeight: 1,
+        color: hovered ? "rgba(255,255,255,0.06)" : "rgba(0,0,255,0.05)",
+        userSelect: "none",
+        pointerEvents: "none",
+        transition: "color 0.3s",
+      }}>
         {num}
-      </motion.span>
+      </span>
 
-      {/* left border draw */}
-      <motion.div
-        initial={{ scaleY: 0 }}
-        whileInView={{ scaleY: 1 }}
-        viewport={{ once: true, margin: "-30px" }}
-        transition={{ duration: 0.5, ease: "easeOut" }}
-        style={{
-          position: "absolute",
-          top: 0,
-          left: -16,
-          width: 2,
-          height: "100%",
-          background: "#0000ff",
-          opacity: 0.25,
-          transformOrigin: "top",
-          borderRadius: 2,
-        }}
-      />
+      {/* content */}
+      <div style={{ display: "flex", flexDirection: "column", gap: isLarge ? 14 : 10, flex: 1, minWidth: 0 }}>
+        <span style={{
+          fontSize: "0.68rem",
+          fontWeight: 700,
+          letterSpacing: "0.15em",
+          textTransform: "uppercase",
+          color: hovered ? "rgba(255,255,255,0.5)" : "#0000ff",
+          transition: "color 0.3s",
+        }}>
+          {num}
+        </span>
 
-      <Stack direction="column" spacing={1} sx={{ pt: 1 }}>
-        <Typography variant="h6" fontFamily={fontSecondary.style.fontFamily}>
+        <h3 style={{
+          margin: 0,
+          fontSize: isLarge ? "clamp(1.3rem, 2vw, 1.7rem)" : isWide ? "1.2rem" : "1rem",
+          fontWeight: 800,
+          letterSpacing: "-0.03em",
+          lineHeight: 1.2,
+          color: hovered ? "#fff" : "#0a0a0a",
+          transition: "color 0.3s",
+        }}>
           {title}
-        </Typography>
+        </h3>
 
-        <Typography variant="body1" color="text.secondary" fontFamily={fontSecondary.style.fontFamily}>
+        <p style={{
+          margin: 0,
+          fontSize: isLarge ? "0.88rem" : "0.82rem",
+          color: hovered ? "rgba(255,255,255,0.7)" : "#666",
+          lineHeight: 1.65,
+          transition: "color 0.3s",
+          maxWidth: isWide ? 480 : "none",
+          display: "-webkit-box",
+          WebkitLineClamp: isLarge ? 4 : isWide ? 2 : 3,
+          WebkitBoxOrient: "vertical",
+          overflow: "hidden",
+        }}>
           {description}
-        </Typography>
+        </p>
 
-        <Stack direction="row" gap={1} alignItems="center" flexWrap="wrap">
-          {technologies?.map((t, i) => (
-            <Fragment key={t}>
-              <Typography
-                variant="body2"
-                color="text.secondary"
-                fontFamily={fontSecondary.style.fontFamily}
-                sx={{ textTransform: "capitalize" }}
-              >
+        {technologies && technologies.length > 0 && (
+          <div style={{ display: "flex", flexWrap: "wrap", gap: 6, marginTop: 4 }}>
+            {technologies.slice(0, isLarge ? 5 : 3).map((t) => (
+              <span key={t} style={{
+                fontSize: "0.68rem",
+                fontWeight: 600,
+                padding: "3px 10px",
+                borderRadius: 999,
+                background: hovered ? "rgba(255,255,255,0.15)" : "rgba(0,0,255,0.07)",
+                color: hovered ? "#fff" : "#0000ff",
+                letterSpacing: "0.04em",
+                transition: "background 0.3s, color 0.3s",
+              }}>
                 {t}
-              </Typography>
-              {i !== technologies.length - 1 && (
-                <Divider orientation="vertical" flexItem sx={{ height: 14, margin: 0.4 }} />
-              )}
-            </Fragment>
-          ))}
-        </Stack>
-
-        {href && (
-          <Link
-            href={href}
-            target="_blank"
-            rel="noreferrer"
-            style={{
-              textDecoration: "underline",
-              textDecorationColor: "#0000ff",
-              fontFamily: fontSecondary.style.fontFamily,
-              wordBreak: "break-word",
-            }}
-          >
-            Source: {href}
-          </Link>
+              </span>
+            ))}
+          </div>
         )}
+      </div>
 
+      {/* actions */}
+      <div style={{ display: "flex", gap: 8, alignItems: "center", flexShrink: 0 }}>
+        {href && (
+          <motion.div whileHover={{ scale: 1.08 }} whileTap={{ scale: 0.95 }}>
+            <Link
+              href={href}
+              target="_blank"
+              rel="noreferrer"
+              onClick={(e) => e.stopPropagation()}
+              style={{
+                display: "inline-flex",
+                alignItems: "center",
+                justifyContent: "center",
+                width: 36,
+                height: 36,
+                borderRadius: "50%",
+                background: hovered ? "rgba(255,255,255,0.15)" : "rgba(0,0,0,0.06)",
+                color: hovered ? "#fff" : "#555",
+                textDecoration: "none",
+                transition: "background 0.3s, color 0.3s",
+              }}
+            >
+              <Code2 size={15} strokeWidth={2} />
+            </Link>
+          </motion.div>
+        )}
         {demo && (
-          <motion.div whileHover="hover" initial="rest" animate="rest" style={{ display: "inline-flex" }}>
-            <Stack
-              direction="row"
-              spacing={0.5}
-              alignItems="center"
-              component={Link}
+          <motion.div
+            animate={{ x: hovered ? 2 : 0, y: hovered ? -2 : 0 }}
+            transition={{ duration: 0.2 }}
+          >
+            <Link
               href={demo}
               target="_blank"
               rel="noreferrer"
-              sx={{ color: "GrayText", "&:hover": { color: "GrayText !important" } }}
+              onClick={(e) => e.stopPropagation()}
+              style={{
+                display: "inline-flex",
+                alignItems: "center",
+                justifyContent: "center",
+                width: 36,
+                height: 36,
+                borderRadius: "50%",
+                background: hovered ? "#fff" : "#0000ff",
+                color: hovered ? "#0000ff" : "#fff",
+                textDecoration: "none",
+                transition: "background 0.3s, color 0.3s",
+              }}
             >
-              <motion.svg
-                style={{ width: 16, height: 16, color: "red" }}
-                fill="none"
-                strokeWidth="1.5"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-                variants={{
-                  rest: { y: 0, x: 0, opacity: 1, scale: 1, rotate: 0 },
-                  hover: {
-                    x:      [0, -2,  2, -2,  2, -1,  1,  0,   6,  40],
-                    y:      [0,  2, -2,  2, -2,  1, -1,  0,  -6, -40],
-                    rotate: [0, -5,  5, -5,  5, -3,  3,  0, -15, -30],
-                    scale:  [1, 1.05, 1.05, 1.05, 1.05, 1.05, 1.05, 1.1, 1.2, 0.4],
-                    opacity:[1,  1,   1,   1,   1,   1,   1,  1,   1,   0],
-                    transition: { duration: 0.9, ease: "easeIn", times: [0, 0.08, 0.16, 0.24, 0.32, 0.4, 0.48, 0.56, 0.75, 1] },
-                  },
-                }}
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  d="M15.59 14.37a6 6 0 0 1-5.84 7.38v-4.8m5.84-2.58a14.98 14.98 0 0 0 6.16-12.12A14.98 14.98 0 0 0 9.631 8.41m5.96 5.96a14.926 14.926 0 0 1-5.841 2.58m-.119-8.54a6 6 0 0 0-7.381 5.84h4.8m2.581-5.84a14.927 14.927 0 0 0-2.58 5.84m2.699 2.7c-.103.021-.207.041-.311.06a15.09 15.09 0 0 1-2.448-2.448 14.9 14.9 0 0 1 .06-.312m-2.24 2.39a4.493 4.493 0 0 0-1.757 4.306 4.493 4.493 0 0 0 4.306-1.758M16.5 9a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0Z"
-                />
-              </motion.svg>
-              <motion.span
-                variants={{
-                  rest: { x: 0, y: 0 },
-                  hover: {
-                    x: [0, -1, 1, -1, 1, 0, 3],
-                    y: [0,  1, -1,  1, -1, 0, 0],
-                    transition: { duration: 0.9, ease: "easeOut", times: [0, 0.08, 0.16, 0.24, 0.32, 0.56, 1] },
-                  },
-                }}
-              >
-                Launch
-              </motion.span>
-            </Stack>
+              <ArrowUpRight size={16} strokeWidth={2.2} />
+            </Link>
           </motion.div>
         )}
-      </Stack>
-    </div>
+      </div>
+    </motion.div>
   );
 }

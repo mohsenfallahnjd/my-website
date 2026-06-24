@@ -21,17 +21,23 @@ function CountingYear({ value, trigger }: { value: string; trigger: boolean }) {
   const [display, setDisplay] = useState(year ? year - 4 : null);
 
   useEffect(() => {
-    if (!trigger || !year) return;
+    if (!trigger || !year) {
+      return;
+    }
     let current = year - 4;
     const step = () => {
       current += 1;
       setDisplay(current);
-      if (current < year) setTimeout(step, 40);
+      if (current < year) {
+        setTimeout(step, 40);
+      }
     };
     step();
   }, [trigger, year]);
 
-  if (!year) return <>{value}</>;
+  if (!year) {
+    return <>{value}</>;
+  }
   return <>{display}</>;
 }
 
@@ -117,10 +123,7 @@ function ExperienceItem({ e, index, timelineHeight }: { e: Experience; index: nu
             <Typography variant="body2">-</Typography>
             <Typography variant="body2" fontWeight={300}>
               {e.endDate === "Present" ? (
-                <motion.span
-                  animate={{ opacity: [1, 0.4, 1] }}
-                  transition={{ duration: 1.5, repeat: Infinity }}
-                >
+                <motion.span animate={{ opacity: [1, 0.4, 1] }} transition={{ duration: 1.5, repeat: Infinity }}>
                   Present
                 </motion.span>
               ) : (

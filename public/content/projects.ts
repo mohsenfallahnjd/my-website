@@ -3,7 +3,8 @@ export const projects = [
     active: true,
     name: "Birthday Reminder",
     repo: "https://github.com/mohsenfallahnjd/birthday-reminder",
-    description: "Never forget a birthday again. A simple app to track and get reminded of your friends and family birthdays.",
+    description:
+      "Never forget a birthday again. A simple app to track and get reminded of your friends and family birthdays.",
     demo: "https://wishdayapp.vercel.app/",
     technologies: ["Next.js", "React", "TypeScript", "Tailwind"],
   },
@@ -11,7 +12,8 @@ export const projects = [
     active: true,
     name: "PDF Briefer",
     repo: "https://github.com/mohsenfallahnjd/pdf-briefer",
-    description: "Upload a PDF and get an AI-powered summary. Quickly extract key insights from documents without reading them in full.",
+    description:
+      "Upload a PDF and get an AI-powered summary. Quickly extract key insights from documents without reading them in full.",
     demo: "https://pdf-briefer.vercel.app/",
     technologies: ["Next.js", "React", "TypeScript", "AI"],
   },
@@ -57,6 +59,20 @@ export const projects = [
       "A modern, interactive Planning Poker application built with Next.js and Framer Motion. This tool helps agile teams estimate story points using fun, illustrated cards with Persian translations.",
     demo: "https://mohsenfallahnjd.github.io/scrum-poker/",
     technologies: ["Next.js", "React", "TypeScript", "Tailwind"],
+  },
+  {
+    active: true,
+    name: "Markdown Reader",
+    description: "Paste or upload any markdown and get a clean, readable view instantly. No setup, no sign-up.",
+    repo: "https://github.com/mohsenfallahnjd/markdown-reader",
+    demo: "https://md-reader-kappa.vercel.app/",
+  },
+  {
+    active: true,
+    name: "Paymay",
+    description: "Track shared expenses and split bills with friends. Simple and fair.",
+    repo: "https://github.com/mohsenfallahnjd/paymay",
+    demo: "https://paymay-dun.vercel.app/",
   },
   {
     active: true,
