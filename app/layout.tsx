@@ -8,35 +8,48 @@ import { font } from "@/theme/theme";
 export const viewport: Viewport = {
   width: "device-width",
   initialScale: 1,
-  maximumScale: 1,
-  userScalable: false,
+  maximumScale: 5,
   viewportFit: "cover",
 };
 
+const title = "Mohsen Fallahnejad — Fullstack Developer";
+const description = "I build clean, fast web products. React, Next.js, TypeScript. Open to work.";
+const url = "https://themohsen.me";
+const ogImage = "https://themohsen.me/og.png";
+
 export const metadata: Metadata = {
-  metadataBase: new URL("https://themohsen.me/"),
-  title: "Mohsen Fallahnejad | Front‑End Developer",
-  authors: [{ name: "Mohsen Fallahnejad", url: "https://themohsen.me/" }],
-  description: "Hi, I'm Mohsen, a front-end developer and usually code on #JS for creating beautiful things 🤠",
-  alternates: { canonical: "https://themohsen.me/" },
+  metadataBase: new URL(url),
+  title: {
+    default: title,
+    template: "%s | Mohsen Fallahnejad",
+  },
+  description,
+  keywords: ["Mohsen Fallahnejad", "Frontend Developer", "Fullstack Developer", "React", "Next.js", "TypeScript", "Web Development", "Portfolio"],
+  authors: [{ name: "Mohsen Fallahnejad", url }],
+  creator: "Mohsen Fallahnejad",
+  alternates: { canonical: url },
+  robots: { index: true, follow: true, googleBot: { index: true, follow: true } },
   openGraph: {
-    locale: "en",
-    siteName: "themohsen.me",
-    title: "Mohsen Fallahnejad | Front‑End Developer",
-    description: "Hi, I'm Mohsen, a front-end developer and usually code on #JS for creating beautiful things 🤠",
-    images: "/logo.svg",
-    url: "https://themohsen.me/",
     type: "website",
+    locale: "en_US",
+    url,
+    siteName: "Mohsen Fallahnejad",
+    title,
+    description,
+    images: [{ url: ogImage, width: 1200, height: 630, alt: "Mohsen Fallahnejad — Fullstack Developer" }],
   },
   twitter: {
-    title: "Mohsen Fallahnejad | Front‑End Developer",
-    description: "Hi, I'm Mohsen, a front-end developer and usually code on #JS for creating beautiful things 🤠",
-    creator: "@mohsenfallahnjd",
-    images: "/logo.svg",
     card: "summary_large_image",
-    site: "https://themohsen.me/",
+    title,
+    description,
+    creator: "@mohsenfallahnjd",
+    images: [ogImage],
   },
-  icons: { icon: "/logo.svg" },
+  icons: {
+    icon: "/logo.svg",
+    shortcut: "/logo.svg",
+    apple: "/logo.svg",
+  },
 };
 
 export default function RootLayout({ children }: { children: ReactNode }) {
