@@ -1,5 +1,27 @@
 export const services = [
   {
+    id: "servu",
+    name: "Servu",
+    problem: "You always forget to log your vehicle services...",
+    solution: "Never miss a service again. Log oil changes, filters, brakes, and every periodic service for your vehicles — simple, private, and always at hand.",
+    href: "https://servu-app.vercel.app/",
+    cta: "Try it free",
+    color: "#ff6b6b",
+    icon: "🚗",
+    tags: ["Services", "Free"],
+  },
+  {
+    id: "qistly",
+    name: "Qistly",
+    problem: "You always forget to pay your bills... the day after.",
+    solution: "Never miss a payment again. Track loans, installments, and recurring payments. See what you owe this month, mark them paid, move on.",
+    href: "https://qistly.vercel.app/",
+    cta: "Try it free",
+    color: "#ff6b6b",
+    icon: "💰",
+    tags: ["Payments", "Free"],
+  },
+  {
     id: "birthday-reminder",
     name: "Birthday Reminder",
     problem: "You always remember birthdays... the day after.",

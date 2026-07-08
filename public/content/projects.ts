@@ -1,6 +1,22 @@
 export const projects = [
   {
     active: true,
+    name: "Servu",
+    repo: "https://github.com/mohsenfallahnjd/servu",
+    description: "Never miss a service again. Log oil changes, filters, brakes, and every periodic service for your vehicles — simple, private, and always at hand.",
+    demo: "https://servu-app.vercel.app/",
+    technologies: ["Next.js", "React", "TypeScript", "Tailwind", "Vercel", "PostgreSQL", "Prisma", "NextAuth.js"],
+  },
+  {
+    active: true,
+    name: "Qistly",
+    repo: "https://github.com/mohsenfallahnjd/qist",
+    description: "Never miss a payment again. Track loans, installments, and recurring payments. See what you owe this month, mark them paid, move on.",
+    demo: "https://qistly.vercel.app/",
+    technologies: ["Next.js", "React", "TypeScript", "Tailwind", "Vercel", "Neon Postgres"],
+  },
+  {
+    active: true,
     name: "Birthday Reminder",
     repo: "https://github.com/mohsenfallahnjd/birthday-reminder",
     description:
