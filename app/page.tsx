@@ -483,6 +483,26 @@ export default function Home() {
               </p>
             </div>
 
+            {/* knock call-status badge */}
+            <motion.a
+              href="https://www.knocknock.lol/mohsen"
+              target="_blank"
+              rel="noreferrer"
+              initial={{ opacity: 0, y: 12 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.3 }}
+              whileHover={{ y: -2 }}
+              style={{ display: "inline-block", textDecoration: "none" }}
+            >
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src="https://www.knocknock.lol/api/badge/mohsen"
+                alt="Call status"
+                style={{ display: "block", height: 32 }}
+              />
+            </motion.a>
+
             {/* contact links */}
             <div className="contact-links" style={{ display: "flex", flexWrap: "wrap", gap: 10 }}>
               {[

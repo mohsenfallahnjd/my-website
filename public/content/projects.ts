@@ -51,6 +51,15 @@ export const projects = [
   },
   {
     active: true,
+    name: "knock",
+    repo: "https://github.com/mohsenfallahnjd/knock",
+    description:
+      "Check before you call. Share one link — friends see Call me or Don't call, then reach you on their phone, FaceTime, or WhatsApp.",
+    demo: "https://www.knocknock.lol/",
+    technologies: ["Next.js", "React", "TypeScript", "Tailwind", "Redis", "Vercel"],
+  },
+  {
+    active: true,
     name: "Alias Router Pro (Chrome Extension)",
     repo: "https://github.com/mohsenfallahnjd/alias-router-pro",
     description:

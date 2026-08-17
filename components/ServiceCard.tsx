@@ -13,16 +13,18 @@ type Service = {
   color: string;
   icon: string;
   tags: string[];
+  badge?: {
+    href: string;
+    src: string;
+    alt: string;
+  };
 };
 
 export default function ServiceCard({ service, index }: { service: Service; index: number }) {
   const [hovered, setHovered] = useState(false);
 
   return (
-    <motion.a
-      href={service.href}
-      target="_blank"
-      rel="noreferrer"
+    <motion.div
       initial={{ opacity: 0, y: 28 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-30px" }}
@@ -30,18 +32,30 @@ export default function ServiceCard({ service, index }: { service: Service; inde
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
       style={{
+        position: "relative",
         display: "flex",
         flexDirection: "column",
         borderRadius: 20,
         overflow: "hidden",
-        textDecoration: "none",
-        cursor: "pointer",
         background: "#0a0a0a",
         boxShadow: hovered ? "0 24px 64px rgba(0,0,0,0.2)" : "0 4px 20px rgba(0,0,0,0.08)",
         transition: "box-shadow 0.3s",
         transform: hovered ? "translateY(-5px)" : "translateY(0)",
       }}
     >
+      <a
+        href={service.href}
+        target="_blank"
+        rel="noreferrer"
+        aria-label={`Open ${service.name}`}
+        style={{
+          position: "absolute",
+          inset: 0,
+          zIndex: 1,
+          textDecoration: "none",
+          cursor: "pointer",
+        }}
+      />
       {/* top: label + icon */}
       <div style={{ padding: "22px 24px 0", display: "flex", alignItems: "center", justifyContent: "space-between" }}>
         <span style={{
@@ -111,6 +125,17 @@ export default function ServiceCard({ service, index }: { service: Service; inde
             }}>
               {service.solution}
             </p>
+            {service.badge && (
+              <a
+                href={service.badge.href}
+                target="_blank"
+                rel="noreferrer"
+                style={{ position: "relative", zIndex: 2, display: "inline-block", marginTop: 12 }}
+              >
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img src={service.badge.src} alt={service.badge.alt} style={{ display: "block", height: 28 }} />
+              </a>
+            )}
           </div>
           <motion.div
             animate={{ x: hovered ? 3 : 0, y: hovered ? -3 : 0 }}
@@ -134,6 +159,6 @@ export default function ServiceCard({ service, index }: { service: Service; inde
           </motion.div>
         </div>
       </motion.div>
-    </motion.a>
+    </motion.div>
   );
 }

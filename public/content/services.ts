@@ -1,5 +1,21 @@
 export const services = [
   {
+    id: "knock",
+    name: "knock",
+    problem: "People call when you're busy — and you feel rude ignoring them.",
+    solution: "Share one link. Friends see Call me or Don't call, then call you the normal way.",
+    href: "https://www.knocknock.lol/",
+    cta: "Claim your name",
+    color: "#16a34a",
+    icon: "🚪",
+    tags: ["Status", "Free"],
+    badge: {
+      href: "https://www.knocknock.lol/mohsen",
+      src: "https://www.knocknock.lol/api/badge/mohsen",
+      alt: "Call status",
+    },
+  },
+  {
     id: "servu",
     name: "Servu",
     problem: "You always forget to log your vehicle services...",
