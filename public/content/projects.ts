@@ -3,7 +3,8 @@ export const projects = [
     active: true,
     name: "Servu",
     repo: "https://github.com/mohsenfallahnjd/servu",
-    description: "Never miss a service again. Log oil changes, filters, brakes, and every periodic service for your vehicles — simple, private, and always at hand.",
+    description:
+      "Never miss a service again. Log oil changes, filters, brakes, and every periodic service for your vehicles — simple, private, and always at hand.",
     demo: "https://servu-app.vercel.app/",
     technologies: ["Next.js", "React", "TypeScript", "Tailwind", "Vercel", "PostgreSQL", "Prisma", "NextAuth.js"],
   },
@@ -11,7 +12,8 @@ export const projects = [
     active: true,
     name: "Qistly",
     repo: "https://github.com/mohsenfallahnjd/qist",
-    description: "Never miss a payment again. Track loans, installments, and recurring payments. See what you owe this month, mark them paid, move on.",
+    description:
+      "Never miss a payment again. Track loans, installments, and recurring payments. See what you owe this month, mark them paid, move on.",
     demo: "https://qistly.vercel.app/",
     technologies: ["Next.js", "React", "TypeScript", "Tailwind", "Vercel", "Neon Postgres"],
   },
@@ -73,7 +75,7 @@ export const projects = [
     repo: "https://github.com/mohsenfallahnjd/bitlyst",
     description:
       "A minimal, fast, and beautiful blog built with Next.js 15, designed for sharing bite-sized tech tips and insights. Perfect for developers who want to quickly publish short, focused content.",
-    demo: "https://bitlyst.vercel.app/",
+    demo: "https://bitlyst.blog/",
     technologies: ["Next.js", "React", "TypeScript", "Tailwind", "Vercel"],
   },
   {
