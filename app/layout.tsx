@@ -12,10 +12,9 @@ export const viewport: Viewport = {
   viewportFit: "cover",
 };
 
-const title = "Mohsen Fallahnejad — Fullstack Developer";
+const title = "Mohsen Fallahnejad — Frontend Developer";
 const description = "I build clean, fast web products. React, Next.js, TypeScript. Open to work.";
 const url = "https://themohsen.me";
-const ogImage = "https://themohsen.me/og.png";
 
 export const metadata: Metadata = {
   metadataBase: new URL(url),
@@ -24,7 +23,7 @@ export const metadata: Metadata = {
     template: "%s | Mohsen Fallahnejad",
   },
   description,
-  keywords: ["Mohsen Fallahnejad", "Frontend Developer", "Fullstack Developer", "React", "Next.js", "TypeScript", "Web Development", "Portfolio"],
+  keywords: ["Mohsen Fallahnejad", "Frontend Developer", "React", "Next.js", "TypeScript", "Web Development", "Portfolio"],
   authors: [{ name: "Mohsen Fallahnejad", url }],
   creator: "Mohsen Fallahnejad",
   alternates: { canonical: url },
@@ -36,14 +35,12 @@ export const metadata: Metadata = {
     siteName: "Mohsen Fallahnejad",
     title,
     description,
-    images: [{ url: ogImage, width: 1200, height: 630, alt: "Mohsen Fallahnejad — Fullstack Developer" }],
   },
   twitter: {
     card: "summary_large_image",
     title,
     description,
     creator: "@mohsenfallahnjd",
-    images: [ogImage],
   },
   icons: {
     icon: "/logo.svg",
