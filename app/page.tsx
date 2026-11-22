@@ -355,6 +355,20 @@ export default function Home() {
                       <Typography variant="body1">{e.description}</Typography>
                       <ExperienceIcon icon={e.icon} />
                     </motion.div>
+                    {"highlights" in e && e.highlights?.length ? (
+                      <Stack component="ul" gap={0.75} sx={{ m: 0, mt: 1.5, pl: 2.25, maxWidth: 680 }}>
+                        {e.highlights.map((line) => (
+                          <Typography
+                            key={line}
+                            component="li"
+                            variant="body2"
+                            sx={{ color: "#444", lineHeight: 1.65 }}
+                          >
+                            {line}
+                          </Typography>
+                        ))}
+                      </Stack>
+                    ) : null}
                   </Stack>
                   <motion.div
                     variants={{

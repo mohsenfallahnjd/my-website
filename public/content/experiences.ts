@@ -1,10 +1,17 @@
 export const experiences = [
   {
+    company: "MilliPay",
+    description: "Front-end Team Lead",
+    icon: "crown",
+    startDate: "June, 2026",
+    endDate: "Present",
+  },
+  {
     company: "AlphaTech",
     description: "Front-end Team Lead",
     icon: "crown",
     startDate: "October, 2025",
-    endDate: "Present",
+    endDate: "June, 2026",
   },
   {
     company: "Speax.ai",
