@@ -6,12 +6,12 @@ import CustomCursor from "@/components/CustomCursor";
 import ExperienceIcon from "@/components/ExperienceIcon";
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
-import ScrollToast from "@/components/ScrollToast";
 import ProjectCard from "@/components/ProjectCard";
+import Playground from "@/components/playground/Playground";
+import ScrollToast from "@/components/ScrollToast";
 import Section from "@/components/Section";
 import { ContactIcon, ExperiencesIcon, ProjectsIcon, SkillsIcon } from "@/components/SectionIcon";
 import ServiceCard from "@/components/ServiceCard";
-import Playground from "@/components/playground/Playground";
 import StackMarquee from "@/components/StackMarquee";
 import { experiences } from "@/public/content/experiences";
 import { projects } from "@/public/content/projects";
@@ -249,11 +249,11 @@ export default function Home() {
               </motion.div>
               <motion.div variants={buttonVariants} whileHover="hover" whileTap="tap">
                 <Button
-                  href="/Mohammad-Mohsen-Fallahnejad-Resume-Jun2026.pdf"
+                  href="/Mohammad-Mohsen-Fallahnejad-Resume-Nov2026.pdf"
                   variant="text"
                   target="_blank"
                   rel="noreferrer"
-                  download="/Mohammad-Mohsen-Fallahnejad-Resume-Jun2026.pdf"
+                  download="/Mohammad-Mohsen-Fallahnejad-Resume-Nov2026.pdf"
                   sx={{ color: "text.secondary" }}
                 >
                   Resume ↓
@@ -316,7 +316,11 @@ export default function Home() {
           <StackMarquee />
         </Section>
 
-        <Section title="Where I've Been" subtitle="Companies and roles that shaped how I think and build." icon={<ExperiencesIcon />}>
+        <Section
+          title="Where I've Been"
+          subtitle="Companies and roles that shaped how I think and build."
+          icon={<ExperiencesIcon />}
+        >
           <Stack direction="column" gap={5}>
             {experiences.map((e, index) => (
               <motion.div
@@ -392,7 +396,12 @@ export default function Home() {
           </Stack>
         </Section>
 
-        <Section id="products" title="Live Products" subtitle="Real apps solving real problems — built and maintained by me." icon={<ProjectsIcon />}>
+        <Section
+          id="products"
+          title="Live Products"
+          subtitle="Real apps solving real problems — built and maintained by me."
+          icon={<ProjectsIcon />}
+        >
           <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(280px, 1fr))", gap: 16 }}>
             {services.map((s, i) => (
               <ServiceCard key={s.id} service={s} index={i} />
@@ -400,7 +409,12 @@ export default function Home() {
           </div>
         </Section>
 
-        <Section id="projects" title="What I Ship" subtitle="Open-source work, side projects, and things I'm proud of." icon={<ProjectsIcon />}>
+        <Section
+          id="projects"
+          title="What I Ship"
+          subtitle="Open-source work, side projects, and things I'm proud of."
+          icon={<ProjectsIcon />}
+        >
           <style>{`
             .bento-grid { display: grid; grid-template-columns: 1fr; gap: 16px; margin-top: 4px; }
             .bento-grid .bento-large { grid-column: span 1; }
@@ -452,7 +466,11 @@ export default function Home() {
           </div>
         </Section>
 
-        <Section id="playground" title="Dev Playground" subtitle="Build your card, find bugs, or discover what kind of dev you are. Shareable.">
+        <Section
+          id="playground"
+          title="Dev Playground"
+          subtitle="Build your card, find bugs, or discover what kind of dev you are. Shareable."
+        >
           <Playground />
         </Section>
 
